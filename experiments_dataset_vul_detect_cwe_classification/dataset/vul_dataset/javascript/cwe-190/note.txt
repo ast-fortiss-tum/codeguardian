@@ -1,0 +1,4 @@
+CWE-190, known as Integer Overflow or Wraparound, typically refers to a situation where an integer operation results 
+in a value that is outside the allowable range of the respective data type. In languages like C or C++, where data types have fixed sizes, 
+integer overflow is a common concern. However, in JavaScript, the situation is a bit different.
+While traditional integer overflow vulnerabilities (CWE-190) are less common in JavaScript, it's not completely immune to related issues. 

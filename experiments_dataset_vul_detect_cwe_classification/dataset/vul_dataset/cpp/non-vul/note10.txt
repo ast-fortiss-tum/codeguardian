@@ -1,0 +1,2 @@
+It correctly manages a character array and respects buffer boundaries, 
+avoiding common issues like buffer overflows.

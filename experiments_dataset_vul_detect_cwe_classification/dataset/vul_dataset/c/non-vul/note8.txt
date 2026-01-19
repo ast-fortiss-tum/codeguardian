@@ -1,0 +1,1 @@
+In the context of using freed memory, it's non-vulnerable as there's no freeing of data before its use.

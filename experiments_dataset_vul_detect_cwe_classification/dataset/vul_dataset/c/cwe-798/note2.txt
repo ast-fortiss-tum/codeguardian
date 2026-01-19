@@ -1,0 +1,2 @@
+// This snippet can be classified as CWE-259, which is a child of CWE-798.
+The password is embedded directly in the code, making it easily accessible.

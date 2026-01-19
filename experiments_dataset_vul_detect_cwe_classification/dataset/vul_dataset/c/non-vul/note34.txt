@@ -1,0 +1,2 @@
+The critical aspects such as safe copying of data from user space (copy_from_user) 
+and validation of the signal code (info.si_code) are properly handled.

@@ -1,0 +1,3 @@
+The code reuses user credentials from the main or previous requests in sub-requests (r->user = r->main->user; and r->user = r->prev->user;). 
+This approach can be problematic if the sub-request should not inherit the same permissions or user identity as the main or previous request. 
+It's important to ensure that each request independently establishes its own authorization context.

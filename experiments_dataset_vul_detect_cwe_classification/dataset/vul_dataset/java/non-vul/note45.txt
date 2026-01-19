@@ -1,0 +1,12 @@
+1. The if (false) statement will never execute its block of code, so the IO.writeLine("Benign, fixed string"); 
+line is effectively unreachable.
+
+2. In the else block, the System.getProperty("CWE395") is used to get a system property. 
+If the property doesn’t exist, System.getProperty() will return null.
+
+3. The code checks if systemProperty is null before calling equals(). This prevents a NullPointerException from being thrown, 
+which would be a potential vulnerability.
+
+4. If systemProperty is null, it correctly handles this case by writing "systemProperty is null" to the line.
+
+5. If systemProperty is not null, it checks if the property equals "CWE395". If it does, it writes "systemProperty is CWE395" to the line.

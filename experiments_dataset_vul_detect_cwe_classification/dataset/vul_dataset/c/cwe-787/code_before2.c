@@ -1,0 +1,8 @@
+// From cwe-snippets, ./snippets_1/non-compliant/C/0249.c
+
+int id_sequence[3];
+/* Populate the id array. */
+id_sequence[0] = 123;
+id_sequence[1] = 234;
+id_sequence[2] = 345;
+id_sequence[3] = 456;

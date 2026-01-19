@@ -1,0 +1,5 @@
+The key issue lies in the fact that it only checks for some specific patterns (/../, .., ../, and trailing /..) 
+but does not account for variations that could still allow an attacker to traverse directories. 
+
+For instance, encoded variations (like %2E%2E/) or slightly altered sequences that 
+bypass these checks could still lead to a directory traversal issue.

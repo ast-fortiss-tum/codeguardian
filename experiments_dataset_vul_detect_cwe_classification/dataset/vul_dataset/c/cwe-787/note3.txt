@@ -1,0 +1,5 @@
+// This snippets is classified as CWE-122: Heap-based Buffer Overflow, which is a child of CWE-787: Out-of-bounds Write. (row 79)
+Due to the potential under-allocation of memory for bitmapUpdate->rectangles, 
+the subsequent loop that populates bitmapUpdate->rectangles[i] can write data past the end of the allocated memory. 
+This is a classic heap-based buffer overflow, where data is written outside the bounds of allocated heap memory, 
+potentially leading to code corruption, crashes, or exploitation for code execution.

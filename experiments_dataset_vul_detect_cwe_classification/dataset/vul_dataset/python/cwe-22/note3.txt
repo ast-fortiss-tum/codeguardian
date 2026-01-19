@@ -1,0 +1,4 @@
+The filename is constructed using a value from CONFIG_TXT['sub']. 
+If CONFIG_TXT['sub'] can be influenced by user input or another external source, 
+it might be possible for an attacker to craft a value that includes path traversal characters 
+(like ../ in Unix-like systems). This could potentially allow access to files outside of the intended directory.

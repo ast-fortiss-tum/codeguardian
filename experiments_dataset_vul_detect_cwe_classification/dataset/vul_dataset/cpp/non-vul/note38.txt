@@ -1,0 +1,12 @@
+1. Stack Buffer Usage and strcpy: The code correctly initializes a stack buffer dataBuffer of 100 characters 
+and copies the string "hostname" into it using strcpy. Because the string "hostname" is well within the size limits of dataBuffer, 
+there is no buffer overflow risk here. However, strcpy is generally considered unsafe because it does not check buffer sizes, 
+which could lead to vulnerabilities if the copied string were longer than the buffer. In this specific case, 
+it's not vulnerable due to the controlled environment and fixed string length, but best practices recommend using safer alternatives 
+like strncpy or memcpy with explicit size checks.
+
+2. Pointer and Reference Manipulation: The function uses a reference to a pointer (char * &dataRef) to indirectly manipulate the data pointer. 
+This technique is not inherently unsafe, but it can lead to confusion and mistakes in more complex codebases. In this snippet, 
+dataRef is effectively used as an alias for data, and the inner block re-declares a local data pointer that shadows the outer data pointer. 
+This shadowing is unnecessary for the operation performed and could lead to errors in more complex scenarios, 
+but it does not introduce a vulnerability in this context.

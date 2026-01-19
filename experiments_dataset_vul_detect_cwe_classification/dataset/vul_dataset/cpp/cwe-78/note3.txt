@@ -1,0 +1,4 @@
+The function badSource reads input from the console and stores it in the data buffer. 
+This buffer is then used as part of the command line argument in the EXECL function call. 
+If an attacker can control the input provided to data, they might be able to inject additional command line arguments 
+or entirely different commands, leading to command injection.

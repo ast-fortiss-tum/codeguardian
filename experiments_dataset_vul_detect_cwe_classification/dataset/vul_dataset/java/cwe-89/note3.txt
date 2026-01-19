@@ -1,0 +1,10 @@
+The vulnerability is in parts of the code:
+
+"productCategory = '" + productCategory + "' and customerID = '" + customerID + "'"
+and
+"'" + sortColumn + "'asc"
+
+In these lines, productCategory, customerID, and sortColumn are variables 
+that are directly used to construct the SQL query. If these variables are derived 
+from user input and are not properly sanitized, an attacker could manipulate them 
+to alter the query's structure, leading to unauthorized data access or manipulation.

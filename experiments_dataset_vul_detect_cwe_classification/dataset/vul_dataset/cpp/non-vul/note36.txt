@@ -1,0 +1,5 @@
+1. Directory Traversal Prevention: By rejecting filenames containing "..", the function aims to prevent directory traversal attacks, 
+where an attacker might attempt to access files outside the intended directory. 
+This is a crucial security measure for any application that accesses the file system based on user input.
+
+2. File Type Restriction: The specific check against .pbl files suggests a 

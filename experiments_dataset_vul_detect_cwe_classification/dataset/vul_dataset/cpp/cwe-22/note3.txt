@@ -1,0 +1,6 @@
+The getCurrentFileName() method gets the name of the current file in the ZIP archive, 
+and absoluteFilePath(name) is used to construct the absolute path where the file will be extracted. 
+However, there is no check to ensure that the extracted file's path is confined to the intended directory. 
+An attacker could craft a ZIP file with a path that includes directory traversal sequences 
+(like ../) in the filenames. When extracted, these files could end up being placed outside of the intended directory, 
+potentially overwriting critical files or placing malicious files in sensitive directories.

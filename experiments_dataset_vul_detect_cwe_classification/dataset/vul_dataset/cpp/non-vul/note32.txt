@@ -1,0 +1,12 @@
+1. Buffer Overflow Protection: The function aims to prevent buffer overflows by ensuring that headerdataPtr + chars 
+does not surpass the boundary of header.rawdata. This is a crucial check for memory safety and is a good practice 
+to avoid writing beyond the allocated array.
+
+2. Use of sizeof Operator: The use of sizeof(header.rawdata) to determine the size of the buffer is appropriate 
+if header.rawdata is a statically sized array. This ensures that the calculation is based on the actual size of the buffer, 
+not on the amount of data it currently contains.
+
+3. Termination Character Insertion: Setting header.rawdata[sizeof(header.rawdata) - 1] = '\0'; 
+before throwing the exception is an attempt to ensure that the data remains null-terminated. 
+This is a defensive programming practice to keep the buffer in a valid state, even in error conditions.
+

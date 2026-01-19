@@ -1,0 +1,5 @@
+The operation data * 2 can lead to an integer overflow. data is a char, which typically holds 8 bits of data.
+When you multiply its value, especially if it's a higher ASCII value, the result might not fit into a char anymore. 
+This can cause an overflow, leading to unexpected behavior or security vulnerabilities. 
+To mitigate this, consider validating the range of data before performing the multiplication 
+or use a data type that can hold the resultant value safely.

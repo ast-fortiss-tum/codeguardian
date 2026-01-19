@@ -1,0 +1,7 @@
+/* Do nothing */
+/* FIX: Don't close the file in the sink */
+; /* empty statement needed for some flow variants */
+CloseHandle(data);
+    {
+        HANDLE data = dataRef;
+    }

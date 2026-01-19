@@ -1,0 +1,7 @@
+The method printDebugInfo checks if the user is authenticated and then uses a switch statement 
+to allow everyone except guests to access debug information. 
+This suggests that regular users (USER) are granted the same privilege as administrators (ADMIN) regarding access to debug information.
+
+This could lead to a situation where regular users have access to potentially sensitive or internal system information, 
+which should typically be restricted to administrators. Allowing broader access 
+than necessary can lead to security risks, such as information disclosure or exploitation of system vulnerabilities.

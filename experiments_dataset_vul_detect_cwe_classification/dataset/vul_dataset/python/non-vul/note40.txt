@@ -1,0 +1,3 @@
+The function uses defusedxml for parsing the XML string, which is a good security practice. defusedxml is a Python library 
+specifically designed to mitigate security risks associated with XML parsing, such as XML external entity (XXE) attacks and billion laughs attacks. 
+By using defusedxml, the function avoids common vulnerabilities often found when using standard XML parsing libraries like xml.etree.ElementTree.

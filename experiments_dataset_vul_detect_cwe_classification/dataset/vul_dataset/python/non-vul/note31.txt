@@ -1,0 +1,12 @@
+There is an additional check compare to the first version of the code (dataset/vul_dataset_mini_ver2/python/cwe-863/code_before2.py):
+
+```
+if root == info.context.user:
+    orders = list(
+        filter(lambda order: order.status != OrderStatus.DRAFT, orders)
+    )
+else:
+    raise PermissionDenied()
+```
+This added check ensures that a user can only access their orders and no one else's, 
+unless they have the 'MANAGE_ORDERS' permission. This is a significant improvement in terms of authorization checks.

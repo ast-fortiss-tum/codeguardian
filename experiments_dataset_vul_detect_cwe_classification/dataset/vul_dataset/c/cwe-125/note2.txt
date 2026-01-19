@@ -1,0 +1,4 @@
+The function attempts to handle an invalid index by printing an error message if index >= len. 
+However, before printing the message, it accesses array[index], which could be out-of-bounds. 
+This can lead to undefined behavior, including accessing memory that the program should not have access to, 
+potentially leading to sensitive information disclosure or a crash.

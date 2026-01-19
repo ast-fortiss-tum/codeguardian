@@ -1,0 +1,6 @@
+
+// This snippet is classified as CWE-295, which has a parent of CWE-287
+The specific concern here is the use of SSL_VERIFY_NONE. This setting disables peer certificate verification. 
+When verification is disabled, the security of the SSL/TLS connection is significantly compromised, 
+as it becomes vulnerable to man-in-the-middle attacks. The peer's identity is not verified, 
+meaning any certificate provided by the peer is accepted without any validation.

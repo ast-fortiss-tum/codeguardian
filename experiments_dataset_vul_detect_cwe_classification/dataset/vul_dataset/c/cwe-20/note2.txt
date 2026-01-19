@@ -1,0 +1,5 @@
+The `s` parameter, which represents the encoding, is directly used without explicit validation. 
+If CZNC::Get().FixupEncoding(s) does not properly validate or sanitize the input, 
+it could potentially lead to issues. For example, if an attacker can control the input, 
+they might provide a malicious encoding string that exploits a vulnerability in the handling of encodings. 
+It's important to ensure that any input is validated and sanitized appropriately, especially when it comes from an untrusted source.

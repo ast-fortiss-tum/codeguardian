@@ -1,0 +1,9 @@
+1. Checks if o is falsy (null, undefined, etc.) and returns false if so.
+2. Checks if o is an instance of Object but not an instance of any type in the safeTypes array.
+3. Checks the type of o against the safeInstances array.
+4. Checks for a special property _toExpand set to false.
+5. Finally, returns true if o.toString() returns '[object Object]'.
+
+Overall, the isPlainObject function seems to be designed with safety in mind, 
+particularly in preventing the processing of non-plain objects that could lead 
+to unwanted side effects

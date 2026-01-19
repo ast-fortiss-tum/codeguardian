@@ -1,0 +1,5 @@
+// This snippet is classified as CWE-78, which is a child of CWE-77.
+This vulnerability arises due to the use of the system function 
+which executes a shell command and the use of ?? as part of the command string. 
+In shell commands, ?? can be interpreted as a wildcard pattern, potentially allowing an attacker 
+to inject additional commands or modify the behavior of the existing command.

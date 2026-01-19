@@ -1,0 +1,5 @@
+The vulnerability arises from concatenating the foldername variable directly into 
+the IMAP command string ("CREATE " + foldername). If an attacker can manipulate 
+the folder parameter in the request, they could potentially inject additional IMAP commands or arguments.
+For example, if foldername is provided as "INBOX\" EXPUNGE", it might lead to unexpected behavior 
+like deleting messages, depending on how the IMAP server processes the command.

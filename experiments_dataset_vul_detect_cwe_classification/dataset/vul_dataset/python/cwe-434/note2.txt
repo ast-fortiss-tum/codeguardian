@@ -1,0 +1,3 @@
+Lack of File Type Validation: The script does not implement any checks to ensure that the uploaded files are of a safe type. 
+Malicious users could upload executable files or scripts that could potentially be executed on the server, 
+leading to various security issues, including remote code execution.

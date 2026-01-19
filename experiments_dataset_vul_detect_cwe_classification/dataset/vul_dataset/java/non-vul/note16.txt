@@ -1,0 +1,6 @@
+Random Number Generation: The code uses SecureRandom().nextInt(), 
+which generates a random integer. SecureRandom is a strong, 
+cryptographically secure random number generator (RNG) in Java.
+
+Conditional Statement: If the generated random number equals 20000, 
+it writes a message about license expiration.

@@ -1,0 +1,5 @@
+// This snippet is classified as CWE-78, which is a child of CWE-77.
+The issue arises from concatenating user-supplied input (in this case, argv[1]) directly into a command string 
+that is executed by the system function. This practice can be exploited by an attacker to execute arbitrary commands. 
+For example, if an attacker provides an argument like "; another_command", 
+it would result in executing another_command on the system, in addition to the intended cat command.

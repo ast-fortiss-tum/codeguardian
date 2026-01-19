@@ -1,0 +1,7 @@
+1. It checks if a proxy error has occurred and returns an error network reply if so.
+2. It checks if the scheme of the request URL is in _scheme_handlers and calls the corresponding handler if so.
+3. It sets custom headers for the request.
+4. It checks if the host of the request URL is blocked and returns an error network reply if so.
+5. It retrieves the current URL and logs the request if 'log-requests' is in _args.debug_flags.
+6. It sets the referer of the request to the current URL.
+7. It calls the superclass’s createRequest method and returns the result.

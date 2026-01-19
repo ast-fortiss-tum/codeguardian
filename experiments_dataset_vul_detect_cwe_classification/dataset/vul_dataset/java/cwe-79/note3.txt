@@ -1,0 +1,4 @@
+The method render dynamically constructs HTML content based on the CurrentGoCDVersion.docsUrl("configuration/delete_artifacts.html"). 
+If the docsUrl method does not properly sanitize or encode the URL, it could potentially include malicious JavaScript code. 
+An attacker could exploit this by injecting a script that, when executed, performs actions on behalf of the user 
+or steals sensitive information like session tokens.

@@ -1,0 +1,2 @@
+The snippet is the fixed-version of the sample in 
+CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')

@@ -1,0 +1,4 @@
+The Class.forName(data) method is used to load the class dynamically, 
+and newInstance() is used to create an instance of the class. 
+This is generally safe when the string used to load the class is a constant string, 
+as is the case here.

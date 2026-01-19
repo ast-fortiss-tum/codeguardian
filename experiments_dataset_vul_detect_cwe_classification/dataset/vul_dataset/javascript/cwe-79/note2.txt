@@ -1,0 +1,6 @@
+Lack of Input Validation: The script directly uses input from the URL (document.URL.substring(...)) 
+without validating or encoding it. This means if the URL contains malicious JavaScript code as part 
+of the eid parameter, that code will be executed in the context of the user's browser.
+
+Use of document.write(): This method writes directly to the HTML document, executing any script tags it encounters. 
+This behavior further exacerbates the XSS vulnerability because it allows the execution of potentially malicious scripts.

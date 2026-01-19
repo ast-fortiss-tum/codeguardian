@@ -1,0 +1,7 @@
+The function func() opens a file named “BadSource_fopen.txt” for writing and reading. 
+If the file is successfully opened, it is assigned to the pointer data. 
+The reference dataRef is then used to create another pointer to the same file.
+
+The code checks if data is not NULL before attempting to close the file, 
+which is a good practice as it prevents undefined behavior from occurring 
+if fclose() were called with a NULL argument.

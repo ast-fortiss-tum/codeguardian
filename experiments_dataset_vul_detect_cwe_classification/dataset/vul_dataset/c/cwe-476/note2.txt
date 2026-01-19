@@ -1,0 +1,7 @@
+In the first conditional block, data is set to NULL.
+In the subsequent conditional block, data is dereferenced without checking 
+if it's NULL. This is where the null pointer dereference occurs, 
+as *data is used in printLongLine(*data).
+
+When a program attempts to use a null pointer to access or modify data, 
+it can lead to undefined behavior, including program crashes or other vulnerabilities.

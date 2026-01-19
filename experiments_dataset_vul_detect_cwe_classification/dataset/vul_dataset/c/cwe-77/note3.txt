@@ -1,0 +1,3 @@
+// This snippet is classified as CWE-78, which is a child of CWE-77.
+The primary issue is with the concatenation of user-supplied input (argv[1]) directly to a command string (cmd) 
+that is subsequently executed by the system function. 

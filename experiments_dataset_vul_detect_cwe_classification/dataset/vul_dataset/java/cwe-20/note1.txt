@@ -1,0 +1,3 @@
+    The methods get, getAll, contains, and others that process header names do not validate the input String name. 
+    If null is passed as an argument, calling toLowerCase(name) could result in a NullPointerException.
+    The toLowerCase method itself does not check if the input CharSequence s is null, which could lead to a NullPointerException.

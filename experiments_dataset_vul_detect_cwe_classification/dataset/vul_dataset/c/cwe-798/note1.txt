@@ -1,0 +1,10 @@
+The Common Weakness Enumeration (CWE) for this kind of vulnerability is CWE-259: 
+Use of Hard-coded Password. 
+
+However, CWE-798 is "Use of Hard-coded Credentials," which is a broader category encompassing 
+the use of any fixed set of credentials within a program.
+This includes hard-coded passwords (CWE-259), as well as other types of credentials 
+like cryptographic keys or usernames.
+
+Thus, making CWE-798 the appropriate classification, with CWE-259 being a more specific instance 
+within that broader category.

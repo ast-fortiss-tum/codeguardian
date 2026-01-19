@@ -1,0 +1,15 @@
+This issue arises if the state or window.getId() contents are not properly sanitized and contain user-controllable data. 
+In such cases, if this data includes malicious scripts, it could lead to Cross-Site Scripting (XSS) vulnerabilities. 
+XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users, potentially stealing credentials,
+ session tokens, or other sensitive information.
+
+
+ """Explanation of the fixed code (code_after.java)"""
+ writer.writeText is generally safer than writer.write when dealing with dynamic content in JSF (JavaServer Faces). 
+ This is because writeText automatically escapes HTML and JavaScript, which helps prevent Cross-Site Scripting (XSS) attacks. 
+ When you use writeText, any special characters in the output that could be interpreted as HTML or JavaScript are converted 
+ to their respective HTML entity codes, effectively neutralizing any embedded scripts.
+
+By using writeText for window.getId(), you reduce the risk of XSS attacks that might occur if window.getId() contains or 
+can be manipulated to contain malicious scripts. This change shows an awareness of output encoding, 
+a key practice in mitigating XSS vulnerabilities.

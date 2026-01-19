@@ -1,0 +1,3 @@
+It’s creating a temporary file and setting the appropriate permissions to 
+avoid insecure temporary file incidentals. The permissions are set to be writable 
+and readable only by the owner of the file, and not executable.

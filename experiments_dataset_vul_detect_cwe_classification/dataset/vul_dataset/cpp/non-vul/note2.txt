@@ -1,0 +1,5 @@
+If data is less than half of CHAR_MAX, it multiplies data by 2 and assigns the result to result. 
+The function then prints result as a hexadecimal character. 
+
+If data is not less than half of CHAR_MAX, it prints a message indicating 
+that the data value is too large to perform arithmetic safely.

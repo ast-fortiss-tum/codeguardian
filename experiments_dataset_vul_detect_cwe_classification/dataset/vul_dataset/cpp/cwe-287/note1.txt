@@ -1,0 +1,18 @@
+- Vulnerability Detail:
+The script checks if Logind::isAvailable() and mainConfig.Users.ReuseSession.get() return true. 
+If so, it proceeds to list existing sessions using OrgFreedesktopLogin1ManagerInterface.
+It then iterates through each session, checking if the session's user name matches the provided user. 
+If a match is found and the service is "sddm", it stores the session ID.
+
+- Problematic Scenario:
+If an existing session ID is found, the script seems to unlock and activate this session without 
+performing adequate authentication checks to ensure that the user initiating this request is indeed the legitimate owner of the session.
+The authentication process, in this case, is bypassed or not sufficiently rigorous, which can allow 
+an unauthorized user to gain access to another user's session.
+
+"""Explanation for the fix (in code_after.cpp)"""
+New Authentication Check: The lambda function connected to the Auth::authentication signal now includes
+a bool success parameter. This parameter indicates whether the authentication was successful.
+The revised code only proceeds to unlock and activate the existing session if success is true. 
+This means that it checks whether the authentication (presumably via PAM, which is 
+a standard authentication method in Unix and Linux systems) was successful before proceeding.

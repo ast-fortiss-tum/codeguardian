@@ -1,0 +1,3 @@
+The vulnerability arises because the filename (rName) is directly concatenated with a fixed directory path to create a file path. 
+If an attacker can manipulate the reportName parameter, they could craft a path that references a file outside the intended directory. 
+For example, a crafted reportName like ../../etc/passwd could lead to unauthorized file deletion or other security issues.

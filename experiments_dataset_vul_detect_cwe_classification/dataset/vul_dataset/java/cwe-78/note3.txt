@@ -1,0 +1,4 @@
+Command Injection Vulnerability: The method constructs a command line by appending user-supplied input 
+(latlonCoords, derived from coordinates) directly into a command string that is executed via 
+Runtime.exec(). This pattern is vulnerable to command injection, as an attacker 
+could potentially manipulate coordinates to execute arbitrary commands.

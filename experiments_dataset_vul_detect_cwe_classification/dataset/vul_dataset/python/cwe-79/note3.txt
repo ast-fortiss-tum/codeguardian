@@ -1,0 +1,16 @@
+The script constructs a message with user-supplied data without properly escaping it, which can lead to an XSS vulnerability.
+
+This issue is present in these lines:
+'''
+Copy code
+message = _(
+    'Tag subscription was canceled (<a href="%(url)s">undo</a>).'
+) % {'url': escape(request.path) + '?tags=' + request.REQUEST['tags']}
+request.user.message_set.create(message = message)
+'''
+The request.REQUEST['tags'] parameter is directly concatenated into the HTML anchor tag. Even though escape(request.path) is used, 
+which is good for preventing XSS in the path, the 'tags' parameter from request.REQUEST is not similarly escaped. 
+
+This means that if an attacker inputs malicious JavaScript code as part of the 'tags' parameter, 
+it could be executed in the browser of anyone viewing this message.
+

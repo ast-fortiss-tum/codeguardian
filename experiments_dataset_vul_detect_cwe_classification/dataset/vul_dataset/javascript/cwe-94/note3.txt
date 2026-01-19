@@ -1,0 +1,6 @@
+The code dynamically creates a template based on req.params['template'], which is user-supplied data. 
+The _.template function from Lodash compiles a string into a template function, which is then executed. 
+If an attacker can control the template parameter, they might inject malicious code that will be executed 
+on the server when the template function is called. This can lead to server-side code injection vulnerabilities, 
+where an attacker could potentially execute arbitrary code on the server, leading to serious security breaches 
+like data leakage, data manipulation, and unauthorized access.

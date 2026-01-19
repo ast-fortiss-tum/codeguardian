@@ -1,0 +1,1 @@
+This issue is mitigated by using yaml.safe_load or yaml.load(..., Loader=yaml.SafeLoader), which is the recommended way to load YAML data safely. By doing so, it prevents the execution of arbitrary code that could have been a result of deserializing untrusted YAML data.

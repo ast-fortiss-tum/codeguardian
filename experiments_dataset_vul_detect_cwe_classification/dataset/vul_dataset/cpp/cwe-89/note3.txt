@@ -1,0 +1,2 @@
+SQL Injection occurs when an attacker can manipulate the SQL query by injecting malicious SQL code through input variables, 
+In this case, 'username' or the result of 'request.Lookup("item")'.

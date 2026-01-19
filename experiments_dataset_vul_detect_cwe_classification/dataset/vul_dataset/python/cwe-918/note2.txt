@@ -1,0 +1,5 @@
+The function takes a URL from recipe.link and makes an HTTP request to that URL. 
+If recipe.link is controllable by an external user or not properly validated, 
+it could be exploited to make the server send requests to unintended URLs. 
+This could lead to information disclosure, interaction with internal services, 
+or other unintended actions by the server.

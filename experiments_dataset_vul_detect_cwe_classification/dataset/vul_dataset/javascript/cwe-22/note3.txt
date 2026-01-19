@@ -1,0 +1,6 @@
+The function checks if the filePath leads to a directory traversal attempt 
+by checking if the relative path between this.path and the full file path (fullPath) 
+starts with ../. This is a fundamental check to prevent path traversal attacks, 
+where an attacker could access files outside of the intended directory. 
+However, this check might not be foolproof. Advanced path traversal techniques, 
+like using encoded or non-standard path separators, might bypass this simple regex check.

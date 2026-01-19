@@ -1,0 +1,3 @@
+The vulnerability in this script is related to the arithmetic operation where the data variable is multiplied by 2. 
+This operation can lead to an integer overflow if the value of data is large enough, 
+because the result might not fit into a byte data type.

@@ -1,0 +1,4 @@
+The strcpy function does not check if the source string fits into the destination buffer.
+If str is longer than BUFSIZE - 1 characters, strcpy will write beyond the end of buf, 
+leading to an out-of-bounds write. This can corrupt adjacent memory and potentially 
+lead to execution of arbitrary code or other unintended behavior.

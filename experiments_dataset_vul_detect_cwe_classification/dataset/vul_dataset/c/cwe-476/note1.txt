@@ -1,0 +1,5 @@
+While there is a check for if (pol_dn == NULL) return EINVAL;, 
+there is no similar check for pol_name or policy. If either of these is NULL, 
+dereferencing them (e.g., *policy = NULL;) could lead to a segmentation fault.
+
+ It's important to validate all input pointers to ensure they are not NULL before dereferencing them.

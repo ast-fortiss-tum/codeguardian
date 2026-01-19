@@ -1,0 +1,12 @@
+The data pointer is allocated memory using new[] and subsequently freed with delete[]. 
+However, the code attempts to access data after it has been deleted, in the printIntLine function call. 
+Accessing memory after it has been freed can lead to undefined behavior, including crashes, data corruption, 
+or potential security vulnerabilities.
+
+To mitigate this, ensure that the pointer is not accessed after it has been freed. 
+If the data needs to be accessed later, do not free it until you are done using it. 
+If you free the memory, set the pointer to NULL to prevent accidental use:
+```
+delete [] data;
+data = NULL;  // Prevents use after free
+```

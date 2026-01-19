@@ -1,0 +1,9 @@
+1. Conditional Statement: The code checks if IO.STATIC_FINAL_FIVE equals 5. If it does, 
+it proceeds to the next part of the code.
+
+2. Date Comparison: It gets the current date and time with Calendar.getInstance(), 
+and sets a specific date (February 1, 2020) with calendarCheck.set(2020, 1, 1). 
+It then checks if the current date is after the set date.
+
+3. License Expiration Message: If the current date is after the set date, 
+it writes a message about license expiration.

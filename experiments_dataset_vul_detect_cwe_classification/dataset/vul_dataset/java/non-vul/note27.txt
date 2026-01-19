@@ -1,0 +1,5 @@
+By adding this null check, the revised code prevents the NullPointerException 
+from occurring, as it no longer attempts to call toString() on a null object. 
+
+Instead, it checks if data is null and handles both cases (null and non-null) appropriately. 
+If data is null, it prints "data is null" to the output, avoiding the attempt to dereference a null pointer.

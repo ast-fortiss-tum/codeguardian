@@ -1,0 +1,1 @@
+Tne snippet is the fixed-version of the sample in CWE-469: Use of Pointer Subtraction to Determine Size

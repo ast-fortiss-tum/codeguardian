@@ -1,0 +1,3 @@
+The operation data * data can still lead to an integer overflow. Since data is a char, multiplying it by itself, 
+especially for larger ASCII values, could result in a value that exceeds the range of a char. 
+This can cause an overflow, leading to unexpected behavior or vulnerabilities.

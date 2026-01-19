@@ -1,0 +1,8 @@
+In your code, userName and itemName are directly appended to the SQL query string. 
+If these variables contain SQL commands (which a malicious user can input), 
+they can alter the intended query logic. This can lead to unauthorized data access, 
+data manipulation, or even database structure alteration.
+
+How SQL Injection Occurs:
+For example, if userName is set to something like admin'; DROP TABLE items;--, 
+the resulting query could delete your items table.

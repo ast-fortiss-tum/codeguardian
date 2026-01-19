@@ -1,0 +1,5 @@
+// This code has CWE-321: Use of Hard-coded Cryptographic Key, which has a parent of CWE-798.
+The encryptionKey is hard-coded directly in the source code. 
+This practice is insecure because anyone who can view the source code also has access to the encryption key.
+ Hard-coded keys are vulnerable to being exposed or leaked, especially in scenarios where the code might be shared, 
+ such as in version control systems or in shared development environments.

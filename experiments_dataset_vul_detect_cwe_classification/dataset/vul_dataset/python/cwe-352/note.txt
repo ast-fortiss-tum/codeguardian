@@ -1,0 +1,7 @@
+CWE-352 vulnerability occurs when an attacker tricks a user into executing actions on a web application in which they are authenticated, 
+using a different website. Since GET requests can be easily crafted in malicious links, images, or other resources, 
+an attacker could create a situation where a user unknowingly sends a GET request to delete a data object simply by visiting a malicious website or clicking a malicious link.
+
+The operation to delete a data object should not be performed using a GET request, which is designed to be idempotent and free of side effects. 
+Instead, state-changing operations should use POST or other HTTP methods such as DELETE, which are not automatically triggered 
+by browsers through simple navigations or pre-fetching, providing a basic layer of security against CSRF attacks.

@@ -1,0 +1,2 @@
+This code performs a check to see if the sender of the message (msg['from'].bare) matches a known value 
+(self.xmpp.boundjid.bare). This is a form of input validation, as it only processes messages from a specific source.

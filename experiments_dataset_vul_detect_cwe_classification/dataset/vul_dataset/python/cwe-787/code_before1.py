@@ -1,0 +1,36 @@
+# Source: Row 5 in ./dataset/CVEfixes/Analysis/results/Python/df_python_cwe_787.xlsx
+
+def parse_line(s):
+    s = s.rstrip()
+
+    r = re.sub(REG_LINE_GPERF, '', s)
+    if r != s: return r
+    r = re.sub(REG_HASH_FUNC, 'hash(OnigCodePoint codes[])', s)
+    if r != s: return r
+    r = re.sub(REG_STR_AT, 'onig_codes_byte_at(codes, \\1)', s)
+    if r != s: return r
+    r = re.sub(REG_UNFOLD_KEY, 'unicode_unfold_key(OnigCodePoint code)', s)
+    if r != s: return r
+    r = re.sub(REG_ENTRY, '{\\1, \\2, \\3}', s)
+    if r != s: return r
+    r = re.sub(REG_EMPTY_ENTRY, '{0xffffffff, \\1, \\2}', s)
+    if r != s: return r
+    r = re.sub(REG_IF_LEN, 'if (0 == 0)', s)
+    if r != s: return r
+    r = re.sub(REG_GET_HASH, 'int key = hash(&code);', s)
+    if r != s: return r
+    r = re.sub(REG_GET_CODE, 'OnigCodePoint gcode = wordlist[key].code;', s)
+    if r != s: return r
+    r = re.sub(REG_CODE_CHECK, 'if (code == gcode)', s)
+    if r != s: return r
+
+    return s
+
+def parse_file(f):
+    print "/* This file was converted by gperf_unfold_key_conv.py\n      from gperf output file. */"
+
+    line = f.readline()
+    while line:
+        s = parse_line(line)
+        print s
+        line = f.readline()

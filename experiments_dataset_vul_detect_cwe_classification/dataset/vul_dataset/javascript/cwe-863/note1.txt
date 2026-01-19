@@ -1,0 +1,11 @@
+The vulnerability in this script appears to be related to how it constructs a URL to make a request to the Facebook Graph API.
+
+he key issue is in the line:
+'''
+.get(`https://graph.facebook.com/${id}`)
+'''
+Here, the id variable is directly inserted into the URL. If id is user-supplied and not properly validated or sanitized, 
+this could lead to an Insecure Direct Object References (IDOR) vulnerability. This type of vulnerability occurs 
+when an application provides direct access to objects based on user-supplied input. 
+In this case, if the id is manipulated by an attacker, they might be able to access data they are not authorized to, 
+such as images from other Facebook users.

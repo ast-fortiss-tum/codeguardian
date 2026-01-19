@@ -1,0 +1,8 @@
+The fgets(dest, DEST_SIZE, stdin); line reads a string from the standard input (stdin) and stores it in the dest buffer. 
+The number of characters read is limited by DEST_SIZE, which prevents a buffer overflow.
+
+Moreover, the code checks if fgets returned NULL, which would indicate an error condition. 
+If fgets returns NULL, the program prints an error message and exits, which is a good practice for error handling.
+
+Finally, the line dest[DEST_SIZE-1] = '\0'; ensures that dest is null-terminated, 
+which is crucial when working with strings in C to prevent reading beyond the end of the string.

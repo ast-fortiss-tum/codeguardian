@@ -1,0 +1,7 @@
+1. Use of Sanitization Functions: The function uses OT::Sanitizer to sanitize the font tables referenced 
+by _hea_tag and _mtx_tag. This implies an attempt to validate and ensure the integrity of the font table data before use, 
+which is a positive security practice, especially when dealing with potentially untrusted font files.
+
+2. Validation of Blob Length: The condition checking if 2 * (this->num_advances + this->num_metrics) > hb_blob_get_length (this->blob) 
+is a security-relevant check. It ensures that the calculated size based on num_advances and num_metrics does not exceed 
+the length of the data blob. This is crucial to prevent buffer overflows or out-of-bounds access when parsing or using the font data.

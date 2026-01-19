@@ -1,0 +1,11 @@
+/* FIX: specify each catch individually */
+catch (out_of_range &)
+{
+    printLine("out_of_range");
+}
+catch (domain_error &)
+{
+    printLine("domain_error");
+    return;
+}
+printLine("ok");

@@ -1,0 +1,38 @@
+# Source: Row 64 in ./dataset/CVEfixes/Analysis/results/Python/df_python_cwe_918.xlsx
+
+@alignviewers_bp.route("/remote/cors/<path:remote_url>", methods=["OPTIONS", "GET"])
+def remote_cors(remote_url):
+    """Proxy a remote URL.
+    Useful to e.g. eliminate CORS issues when the remote site does not
+        communicate CORS headers well, as in cloud tracks on figshare for IGV.js.
+
+    Based on code from answers to this thread:
+        https://stackoverflow.com/questions/6656363/proxying-to-another-web-service-with-flask/
+    """
+    # Check that user is logged in or that file extension is valid
+    if controllers.check_session_tracks(remote_url) is False:
+        return abort(403)
+
+    resp = requests.request(
+        method=request.method,
+        url=remote_url,
+        headers={key: value for (key, value) in request.headers if key != "Host"},
+        data=request.get_data(),
+        cookies=request.cookies,
+        allow_redirects=True,
+    )
+
+    excluded_headers = [
+        "content-encoding",
+        "content-length",
+        "transfer-encoding",
+        "connection",
+    ]
+    headers = [
+        (name, value)
+        for (name, value) in resp.raw.headers.items()
+        if name.lower() not in excluded_headers
+    ]
+
+    response = Response(resp.content, resp.status_code, headers)
+    return response

@@ -1,0 +1,1 @@
+Tne snippet is the fixed-version of the sample in CWE-478: Missing Default Case in Switch Statement

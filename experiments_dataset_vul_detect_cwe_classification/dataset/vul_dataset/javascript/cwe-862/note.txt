@@ -1,0 +1,4 @@
+There is no data in the two datasets.
+
+CWE-862, or "Missing Authorization," is typically not directly associated with client-side JavaScript in the way it's commonly understood. 
+This is because authorization checks are fundamentally a server-side responsibility.

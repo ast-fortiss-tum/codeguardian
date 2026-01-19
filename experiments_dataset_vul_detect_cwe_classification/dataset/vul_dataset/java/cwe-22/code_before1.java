@@ -1,0 +1,31 @@
+// Source: Row 8 in ./dataset/CVEfixes/Analysis/results/Python/df_java_cwe_22.xlsx
+
+private static boolean nameContainsForbiddenSequence(String name) {
+    boolean result = false;
+    if (name != null) {
+        name = name.toLowerCase();
+
+        result = name.startsWith(".") ||
+                    name.contains("../") ||
+                    name.contains("..\\") ||
+                    name.startsWith("/") ||
+                    name.startsWith("\\") ||
+                    name.endsWith("/") ||
+
+                    name.contains("..%2f") ||
+                    name.contains("..%5c") ||
+                    name.startsWith("%2f") ||
+                    name.startsWith("%5c") ||
+                    name.endsWith("%2f") ||
+
+                    name.contains("..\\u002f") ||
+                    name.contains("..\\u005c") ||
+                    name.startsWith("\\u002f") ||
+                    name.startsWith("\\u005c") ||
+                    name.endsWith("\\u002f")
+
+                ;
+    }
+    
+    return result;
+}

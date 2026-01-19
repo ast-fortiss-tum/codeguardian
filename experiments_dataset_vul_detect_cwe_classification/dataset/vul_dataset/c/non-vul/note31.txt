@@ -1,0 +1,10 @@
+1. Initialization of data: In the revised code, instead of setting data to NULL, 
+it is initializing it to point to tmpData, a local variable of type twoIntsStruct.
+
+2. Memory Address: As tmpData is a valid object of twoIntsStruct in the function's stack frame, 
+data points to a valid memory address. This means when data->intOne is accessed, 
+it is no longer dereferencing a NULL pointer.
+
+3. Safe Dereference: The access data->intOne is safe because data points to tmpData, 
+which is a valid object.
+

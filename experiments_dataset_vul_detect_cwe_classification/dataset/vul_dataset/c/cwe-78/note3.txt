@@ -1,0 +1,4 @@
+This vulnerability occurs when an application passes unsafe user supplied data 
+(such as filenames, environment variables, or system commands) to a system shell. 
+In the provided code, the execlp function is used, which is a potential point of injection 
+if the arguments supplied to it (like COMMAND_INT) are influenced by external input or are not properly sanitized.

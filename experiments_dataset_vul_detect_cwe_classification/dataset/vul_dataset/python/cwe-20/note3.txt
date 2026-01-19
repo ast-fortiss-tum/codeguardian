@@ -1,0 +1,2 @@
+The line id = request.GET['id'] directly retrieves the 'id' parameter from the GET request without any validation or sanitization. 
+This can be problematic as it assumes the input will always be safe and well-formed, which might not be the case.

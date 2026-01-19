@@ -1,0 +1,4 @@
+Both username and itemName are directly concatenated into a SQL query. 
+If either of these variables contains malicious SQL commands inputted by a user, 
+it could lead to SQL injection. SQL injection attacks can lead to unauthorized data access, 
+data manipulation, and in severe cases, complete control over the database.

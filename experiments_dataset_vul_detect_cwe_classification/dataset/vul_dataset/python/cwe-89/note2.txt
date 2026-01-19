@@ -1,0 +1,4 @@
+The $where operator allows you to pass a JavaScript expression or function as a query. 
+In your code, you're directly concatenating user input (userName and emailId) into this expression. 
+This practice is inherently insecure as it can be exploited for injection attacks, where an attacker could insert malicious code.
+Although it's a NoSQL injection in this context, the principles and risks are similar to SQL injection.

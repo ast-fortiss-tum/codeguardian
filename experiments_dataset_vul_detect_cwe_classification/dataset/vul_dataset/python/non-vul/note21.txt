@@ -1,0 +1,2 @@
+The to_yaml method itself can be classified as non-vulnerable 
+in the context of serialization. 

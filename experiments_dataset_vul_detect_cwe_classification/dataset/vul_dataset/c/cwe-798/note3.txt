@@ -1,0 +1,6 @@
+The line char *stored_password = ""; suggests that the password is initially set to an empty string. 
+If this variable is meant to store a hardcoded password, this practice is vulnerable. 
+
+Hardcoding credentials within the application's source code can lead to unauthorized access if the codebase is exposed. 
+It's safer to store such sensitive information in a separate and secure configuration file or environment variable, 
+and even then, it should be encrypted.

@@ -1,0 +1,3 @@
+In this case, if an attacker can manipulate sSkinName, they might be able to traverse to directories outside of the intended webskins directory. 
+For instance, if sSkinName were something like ../../etc, the final path could end up pointing to a directory entirely outside the web application's scope,
+potentially exposing sensitive files or system directories.

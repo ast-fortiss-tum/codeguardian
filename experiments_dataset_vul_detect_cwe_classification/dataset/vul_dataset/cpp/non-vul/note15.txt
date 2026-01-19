@@ -1,0 +1,2 @@
+/* FIX: Assign a value to the thing pointed to by pointer */
+*pointer = data; 

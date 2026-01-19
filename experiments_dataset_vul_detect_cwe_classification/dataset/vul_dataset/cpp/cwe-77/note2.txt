@@ -1,0 +1,7 @@
+// This snippet is classified as CWE-78, which is a child of CWE-77.
+The use of strcat to append user-supplied input (argv[1]) directly to a command string 
+that is executed by system() can lead to command injection. 
+
+If an attacker provides a specially crafted argument, they could execute arbitrary commands on the system. 
+For example, an attacker could provide "; some_malicious_command" as an argument, 
+which would break out of the intended cat command and execute some_malicious_command.

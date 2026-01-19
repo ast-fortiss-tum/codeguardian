@@ -1,0 +1,8 @@
+1. It opens a file whose path is specified in args.blueprint.model_opt_path.
+
+2. It reads the entire file and loads it as a YAML document using yaml.safe_load(). 
+This is a safe function for parsing YAML data, as it does not execute any code from the YAML document.
+3. It then constructs a dictionary active_model_opts from all_model_opts 
+where each key-value pair is included if self.conversations_needed[model] > 0.
+
+4. Finally, it calls TurkLikeAgent.get_bot_agents() with args and active_model_opts as arguments and returns the result.

@@ -1,0 +1,14 @@
+nsure that the implemented fix adequately protects against CSRF attacks.
+
+In the second code snippet, we can see an addition in the @app.after_request function:
+
+python
+Copy code
+@app.after_request
+def add_security_headers(resp):
+    resp.headers['Content-Security-Policy'] = "default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:"
+    if request.endpoint == "editbook.edit_book":
+        resp.headers['Content-Security-Policy'] += " *"
+    # Other headers...
+    return resp
+This change includes setting the Content-Security-Policy header. While this is a good security practice, especially for preventing XSS attacks, it does not directly address CSRF vulnerabilities. The CSRF protection typically involves including and validating a unique token in each state-changing request, which does not seem to be implemented in this fix.

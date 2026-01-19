@@ -1,0 +1,5 @@
+It uses os.system(dec) to execute a system command. This method is vulnerable to command injection 
+if any part of the command string can be influenced by an external input. 
+In this case, variables like self.jadx, dex, and self.tempdir could potentially be manipulated to inject malicious commands. 
+To mitigate this risk, consider using more secure alternatives like subprocess.run(), 
+which offers better control over command arguments and can prevent command injection.

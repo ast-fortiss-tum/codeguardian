@@ -1,0 +1,9 @@
+Data Initialization: The variable data is properly initialized before use.
+
+Buffer Overflows: There doesn’t seem to be any risk of buffer overflows as there are no operations 
+that write to an array or memory block.
+
+Format Strings: The printf function is used correctly with a constant format string, 
+so there’s no risk of format string vulnerabilities.
+
+Control Flow: The control flow of the program is straightforward and doesn’t seem to have any issues.

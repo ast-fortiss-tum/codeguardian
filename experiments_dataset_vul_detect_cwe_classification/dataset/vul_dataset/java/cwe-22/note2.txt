@@ -1,0 +1,4 @@
+Path Traversal vulnerability arises when an application uses external input to construct file paths. 
+An attacker might exploit this by crafting a path that escapes the intended directory. \
+For instance, an attacker could provide a path like "/safe_dir/../unintended_dir/sensitive_file" 
+which, after resolving, might point to a file outside of "/safe_dir/".

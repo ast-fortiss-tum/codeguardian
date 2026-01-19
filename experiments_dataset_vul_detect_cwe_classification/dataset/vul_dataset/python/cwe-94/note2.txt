@@ -1,0 +1,7 @@
+In the code, template = request.GET['template'] takes a template string directly from the request's GET parameter and 
+creates a new Jinja2 template with it (Jinja2_Template(template)). This is potentially dangerous because it allows users to supply arbitrary templates, which can lead to SSTI.
+If an attacker can control the template, they might be able to execute arbitrary code on the server, depending on the template engine's features and the server's configuration.
+
+How SSTI Occurs:
+Consider an attacker providing a template string that includes malicious code or commands. 
+Since the template engine processes this string, it could execute unintended commands or code on the server.

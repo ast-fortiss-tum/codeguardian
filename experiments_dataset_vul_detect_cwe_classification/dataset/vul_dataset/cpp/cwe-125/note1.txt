@@ -1,0 +1,6 @@
+```
+memcpy(dest, data, strlen(dest)*sizeof(char));
+
+```
+/* POTENTIAL FLAW: using memcpy with the length of the dest where data
+* could be smaller than dest causing buffer overread */

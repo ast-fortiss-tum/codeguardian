@@ -1,0 +1,4 @@
+The hmacKey is initialized as an empty string (""). This results in a predictable, 
+weak key for HMAC, which is a serious security vulnerability.
+Using such weak or default keys can easily be exploited by attackers, 
+compromising the integrity and authenticity of the HMAC.

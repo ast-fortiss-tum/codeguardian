@@ -1,0 +1,8 @@
+Buffer Declaration: There are two buffers `buf` and `in`, with `buf` being 64 bytes in size and 
+`in` being `MAX_SIZE` bytes. The size of `MAX_SIZE` is not specified, but it's assumed to be larger than 64.
+
+Reading Input: You're reading input into the `in` buffer using `read(0, in, MAX_SIZE-1)`. 
+This is generally safe as you're limiting the input size to `MAX_SIZE-1`.
+
+The code is copying `bytes` number of bytes from `in` to `buf` without checking if `bytes` exceeds the size of `buf`. 
+If `bytes` is greater than 64, it will lead to a buffer overflow.

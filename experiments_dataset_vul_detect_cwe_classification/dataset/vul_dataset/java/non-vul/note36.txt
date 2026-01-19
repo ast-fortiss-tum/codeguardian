@@ -1,0 +1,4 @@
+The code correctly demonstrates the use of exception handling in Java. 
+An UnsupportedOperationException is explicitly thrown and then caught within the same method. 
+The catch block handles the exception by printing a generic error message, 
+which is a good practice for avoiding the disclosure of sensitive information about the application's internal workings.

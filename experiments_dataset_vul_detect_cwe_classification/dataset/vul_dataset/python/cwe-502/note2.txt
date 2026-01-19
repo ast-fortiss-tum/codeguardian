@@ -1,0 +1,7 @@
+Use of cPickle for Deserialization (CWE-502): The use of cPickle.loads for deserializing data is potentially dangerous. 
+cPickle is known for being vulnerable to arbitrary code execution during deserialization. If an attacker can control the serialized data, 
+they can execute arbitrary code on the system where the deserialization is taking place. This is a critical vulnerability and should be addressed immediately.
+
+Recommendation: Use a safer serialization format like JSON, or if complex objects must be serialized, 
+ensure that the serialization format does not allow arbitrary code execution. 
+For instance, you can use pickle with a restricted loader, or better, use json.loads if the data format allows.

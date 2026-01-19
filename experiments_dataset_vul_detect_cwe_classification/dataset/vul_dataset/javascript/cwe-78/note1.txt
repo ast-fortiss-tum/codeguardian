@@ -1,0 +1,5 @@
+The concatenation of opencv and flag variables directly into the exec command is the primary issue:
+'''
+exec("pkg-config " + opencv + " " + flag, function(error, stdout, stderr) {...});
+'''
+If opencv or flag contain malicious input, such as "; rm -rf / ", it could lead to destructive or unauthorized actions.

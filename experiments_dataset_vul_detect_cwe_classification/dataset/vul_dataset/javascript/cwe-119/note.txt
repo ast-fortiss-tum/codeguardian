@@ -1,0 +1,5 @@
+There is no data in CVEfixes for this CWE entry.
+
+while CWE-119 is a significant concern in languages with manual memory management, 
+its occurrence in JavaScript is relatively rare and usually involves interactions 
+with lower-level code or vulnerabilities within the JavaScript engine itself. 

@@ -1,0 +1,8 @@
+1. It opens a file whose path is specified in config_path.
+
+2. It reads the entire file and loads it as a YAML document using yaml.load(f.read(), Loader=yaml.SafeLoader). 
+This is a safe function for parsing YAML data, as it does not execute any code from the YAML document.
+
+3. It then constructs a dictionary result from cfg where each key-value pair is included if the corresponding key exists in cfg.
+
+4. Finally, it returns the result dictionary.

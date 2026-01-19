@@ -1,0 +1,12 @@
+The direct use of user-supplied server names (matrix_server_name) in making external requests is a classic SSRF vulnerability pattern, 
+where an attacker could potentially cause the server to make requests to unintended destinations, including internal services 
+that should not be accessible from the outside.
+
+### Explanation for the updated snippets to address the issue ###
+By ensuring that the matrix_server_name is a valid hostname before proceeding with the request, 
+the application reduces the risk of an attacker being able to manipulate the server into making 
+unauthorized external requests to potentially malicious destinations or internal services that are not intended to be exposed. 
+
+```
+is_valid_hostname(hostname)
+```

@@ -1,0 +1,6 @@
+The potential vulnerability here relates to the requestCert option being set to true. 
+When requestCert is true, the server requests a certificate from clients that connect 
+and attempts to verify that certificate. However, this script does not specify 
+how the server should handle a situation where the client does not provide a certificate 
+or provides an invalid certificate.
+

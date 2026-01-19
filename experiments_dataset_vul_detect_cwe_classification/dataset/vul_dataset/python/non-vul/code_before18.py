@@ -1,0 +1,10 @@
+# Source: Row 871 in ./dataset/CVEfixes/Analysis/results/Python/df_python_all.xlsx
+
+def test_list(self):
+    self.user.session_set.create(session_key='ABC123', ip='127.0.0.1',
+                                    expire_date=datetime.now() + timedelta(days=1),
+                                    user_agent='Firefox')
+    response = self.client.get(reverse('user_sessions:session_list'))
+    self.assertContains(response, 'Active Sessions')
+    self.assertContains(response, 'Firefox')
+    self.assertNotContains(response, 'ABC123')

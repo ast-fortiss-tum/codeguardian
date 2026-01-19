@@ -1,0 +1,6 @@
+## Recognized the vulnerability as CWE-78, which has a parent CWE-77 -> Thus, the vulnerability can be also classified as CWE-77.
+The most prominent issue here is related to CWE-78, which involves the injection of unintended commands through manipulating input. 
+The os.system(cmd) function is used to execute a system command. 
+If INITCMD (which is appended to the home directory) can be influenced by user input or an external source, 
+it could potentially lead to command injection. An attacker could craft INITCMD in a way that appends additional commands to cmd, 
+leading to the execution of arbitrary system commands.

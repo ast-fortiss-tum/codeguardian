@@ -1,0 +1,13 @@
+1. Use of SHA-512: SHA-512 is a cryptographic hash function from the SHA-2 family, 
+which is considered secure and widely recommended for hashing purposes. 
+It provides a good level of resistance against hash collisions and preimage attacks, 
+making it suitable for various cryptographic applications, including integrity verification and secure storage of non-password data.
+
+2. Proper Use of MessageDigest: The code correctly uses the MessageDigest class to perform hashing. 
+The messageDigest.update(HASH_INPUT.getBytes("UTF-8")) method call ensures that the input string is 
+properly converted to bytes using UTF-8 encoding before being fed into the hash function. 
+This is the correct approach to handle input data for hashing.
+
+3. Secure Output Handling: The hashed output is converted to a hexadecimal string representation using 
+IO.toHex(messageDigest.digest()) and written to the console. This representation is common for 
+displaying hash values and does not introduce security issues.

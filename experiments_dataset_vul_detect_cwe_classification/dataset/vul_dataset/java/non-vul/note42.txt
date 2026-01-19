@@ -1,0 +1,4 @@
+1. Use of SecureRandom: The SecureRandom class is a part of Java's standard library and is designed to generate cryptographically 
+strong random numbers. Unlike Random, it is secure against prediction, making it suitable for use in security-sensitive applications. 
+Therefore, the choice of SecureRandom is appropriate for scenarios where you need strong randomness, such as generating tokens, 
+passwords, or other security-sensitive information.

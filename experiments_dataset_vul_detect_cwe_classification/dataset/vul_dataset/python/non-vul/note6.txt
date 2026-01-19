@@ -1,0 +1,2 @@
+The scriptPath function itself is not vulnerable; 
+it safely constructs a path based on the given segments. 

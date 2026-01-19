@@ -1,0 +1,1 @@
+The content of the JSON body (such as cloudagent_ip, cloudagent_port, etc.), are not fully checked.

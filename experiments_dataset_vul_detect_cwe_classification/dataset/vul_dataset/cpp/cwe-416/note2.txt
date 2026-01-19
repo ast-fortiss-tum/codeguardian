@@ -1,0 +1,12 @@
+The code allocates memory dynamically for data using malloc, initializes it, 
+and then immediately frees it with free(data). 
+Any subsequent attempt to access or use the data pointer after it has been freed will lead to undefined behavior, 
+potentially causing a crash or exploitation by malicious code.
+
+To mitigate this, ensure that the pointer is not accessed after it has been freed. 
+If the data needs to be accessed later, do not free it until you are done using it. 
+If you free the memory, set the pointer to NULL to avoid accidental use:
+```
+free(data);
+data = NULL;  // Prevents use after free
+```

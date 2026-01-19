@@ -1,0 +1,2 @@
+There is any snippets that has CWE-20 vulnerability.
+This could be related to data sources of CVEfixes, which refers to lots of kernel projects.

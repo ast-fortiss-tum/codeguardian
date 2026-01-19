@@ -1,0 +1,20 @@
+The primary concern is with getStringParameterSQL. 
+This method directly concatenates the parameter value into a SQL string: return "'" + param + "'";. 
+If param contains SQL control characters or commands, it could be used to modify the SQL query, leading to SQL Injection.
+
+
+"""EXplanation of the fixed code"""
+The updated getStringParameterSQL method in your Java code includes an attempt to 
+mitigate SQL Injection risks by escaping single quotes in string parameters:
+
+@Override
+public String getStringParameterSQL(String param) {
+    // DASHBUILDE-113: SQL Injection on data set lookup filters
+    String escapedParam = param.replaceAll("'", "''");
+    return "'" + escapedParam + "'";
+}
+
+This change replaces each single quote (') in the input string with two single quotes (''), 
+which is a common method for escaping single quotes in SQL. 
+This approach can help prevent some forms of SQL Injection where the attacker tries to terminate the string literal
+and inject additional SQL code.

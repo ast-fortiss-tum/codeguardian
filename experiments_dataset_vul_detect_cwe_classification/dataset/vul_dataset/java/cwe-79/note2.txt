@@ -1,0 +1,2 @@
+The method doGetAsJson directly concatenates the param query parameter into a JSON response. 
+If param includes malicious JavaScript code, it can be executed in the context of the recipient's browser. 

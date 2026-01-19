@@ -1,0 +1,4 @@
+The method throws a generic Throwable at the beginning, which is not a good practice because it can catch and throw everything 
+including Errors which you normally wouldn't want to handle. The exception message includes the absolute path of 
+the directory that could not be created, which might lead to information disclosure if this exception message is logged 
+or shown to an end-user without proper handling.

@@ -1,0 +1,4 @@
+The variable data is explicitly set to null in both branches of the first if-else statement. 
+Later, within another conditional check, there's an attempt to call toString() 
+on data without verifying if it is non-null. This can lead to a NullPointerException at runtime. 
+Such exceptions can cause unexpected behavior or crashes in your application.

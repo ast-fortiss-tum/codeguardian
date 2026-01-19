@@ -1,0 +1,6 @@
+This weakness occurs when data is used to construct code that is then executed by the application. 
+In this case, the Function(src) constructor dynamically executes code contained in the src variable. 
+This can lead to serious security risks, especially if the content of src can be influenced by an external user, 
+leading to arbitrary code execution.
+
+There is no solution (fixed code) in CVEfixes dataset.

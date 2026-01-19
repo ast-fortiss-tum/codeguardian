@@ -1,0 +1,6 @@
+If a piece of code is categorized as CWE-78 (Improper Neutralization of Special Elements used in an OS Command, 'OS Command Injection'), 
+it can also fall under the broader category of CWE-77 (Improper Neutralization of Special Elements used in a Command, 'Command Injection').
+
+The key issue here is the use of unvalidated user input (argv[1]) in constructing an OS command to be executed by the system function.
+ This poses a risk of command injection, where an attacker can provide input that alters the intended command execution. 
+ For example, if an attacker inputs a string like ; rm -rf /, the final command becomes /usr/bin/cat ; rm -rf /, leading to potentially catastrophic consequences.

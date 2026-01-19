@@ -1,0 +1,3 @@
+Exception Handling for Arithmetic Operations:
+The code correctly anticipates and handles ArithmeticException during the scaleByPowerOfTen call, 
+which is good practice for preventing unexpected crashes due to arithmetic errors such as underflow.

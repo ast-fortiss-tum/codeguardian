@@ -1,0 +1,1 @@
+It's not vulnerable, but it's also not an example of robust, secure coding practices.

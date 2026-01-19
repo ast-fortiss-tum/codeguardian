@@ -1,0 +1,5 @@
+`read(0,inputbuf,MAXLEN);` - This line reads input into inputbuf but does not ensure null termination. 
+In C, strings must be null-terminated to be processed correctly by functions like strcpy.
+
+`strcpy(pathbuf,inputbuf);` - Here, strcpy is used to copy data from inputbuf to pathbuf. 
+Since strcpy does not check for buffer boundaries, it can lead to a buffer overflow if inputbuf is not null-terminated.

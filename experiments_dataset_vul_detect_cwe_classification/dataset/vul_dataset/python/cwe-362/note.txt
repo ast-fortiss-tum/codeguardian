@@ -1,0 +1,2 @@
+If credentials do not match, it introduces a random delay before returning False.
+This delay mitigates timing attacks, where an attacker could use the time taken by the server to respond to infer information about the stored passwords.

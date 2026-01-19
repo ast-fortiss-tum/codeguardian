@@ -1,0 +1,1 @@
+// From cwe-snippets, ./snippets_1/non-compliant/C/0003.c

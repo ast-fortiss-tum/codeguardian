@@ -1,0 +1,10 @@
+1. It checks if data is not equal to Integer.MIN_VALUE or Long.MIN_VALUE. 
+This is important because Math.abs(Integer.MIN_VALUE) or Math.abs(Long.MIN_VALUE) would return the same value due to overflow.
+
+2. It checks if the absolute value of data is less than or equal to the square root of Short.MAX_VALUE. 
+This ensures that squaring data will not result in a value larger than Short.MAX_VALUE, preventing an overflow.
+
+3. If data passes these checks, it is safe to square data and store the result in a short variable.
+
+4. If data does not pass these checks, the code outputs a message indicating that the value is too large to square, 
+instead of attempting the operation and potentially causing an overflow.

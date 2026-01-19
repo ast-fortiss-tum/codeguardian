@@ -1,0 +1,1 @@
+Initialize a structure with two integers and then prints them.

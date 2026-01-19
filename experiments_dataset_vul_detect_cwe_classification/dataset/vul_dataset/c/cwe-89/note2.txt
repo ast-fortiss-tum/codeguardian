@@ -1,0 +1,4 @@
+SQL Injection occurs when an attacker can influence the SQL query in a way that was not intended by the developer. 
+In your code, sprintf is used to concatenate user inputs (username and the result of request.Lookup("item")) 
+directly into the SQL query. If these inputs are not properly sanitized, an attacker could craft malicious input to manipulate the query, 
+leading to unauthorized data access or modification.

@@ -1,0 +1,5 @@
+`unsigned int result = data + 1;`
+
+If data holds the maximum value that an unsigned int can store (which is typically 2^32 - 1 or 4,294,967,295 in a 32-bit system), 
+adding 1 to it causes an overflow. In the case of unsigned integer overflow, 
+the result wraps around to zero, which can lead to unexpected and incorrect behavior in the program.

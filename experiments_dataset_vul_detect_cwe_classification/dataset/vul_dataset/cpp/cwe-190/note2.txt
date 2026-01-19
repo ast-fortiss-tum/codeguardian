@@ -1,0 +1,4 @@
+`char result = data * 2;`
+If data is close to the maximum value a char can hold (typically 127 in signed char or 255 in unsigned char), 
+multiplying it by 2 could cause an integer overflow. This means the value wraps around, 
+leading to incorrect, unexpected results that are much smaller than the actual mathematical result.

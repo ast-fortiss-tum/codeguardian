@@ -1,0 +1,11 @@
+There is no data in the datasets.
+
+# Reason:
+1. Dynamic Typing and Automatic Memory Management: Python is a dynamically typed language with automatic memory management.
+This means that the language runtime automatically handles memory allocation and garbage collection, 
+reducing the likelihood of low-level memory access issues common in languages like C or C++.
+
+2. 'None' in Python: In Python, the equivalent of a null pointer is None. 
+However, attempting to access an attribute of None or calling a method on None results in a TypeError 
+rather than a segmentation fault or a crash caused by a null pointer dereference. 
+Python's runtime catches such cases and throws an exception, which can be handled within the Python code.

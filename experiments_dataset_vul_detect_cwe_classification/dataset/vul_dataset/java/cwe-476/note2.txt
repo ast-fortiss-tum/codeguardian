@@ -1,0 +1,4 @@
+This issue occurs when a program attempts to access or use a null pointer.
+If other methods in your class rely on secondary not being null, 
+and those methods are called without checking for null, 
+it could lead to runtime exceptions or unexpected behavior.

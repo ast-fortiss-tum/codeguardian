@@ -1,0 +1,14 @@
+In this case, the vulnerability would allow an attacker to inject additional SMTP commands 
+into the session.docmd() call if the 'user' parameter is not properly sanitized. 
+This could potentially be exploited to perform unauthorized actions on the SMTP server 
+or even lead to the disclosure of sensitive information.
+
+# From snippets_2/non-compliant/Python/0044.txt 
+
+SMTP command injection vulnerabilities occur when an attacker may influence the commands sent to an SMTP mail server. 
+1. Data enters the application from an untrusted source. 
+2. The data is used as or as part of a string representing a command that is executed by the application. 
+3. By executing the SMTP command, the attacker is able to instruct the server to carry out malicious actions such as sending spam. 
+
+Example 1: The following code uses an HTTP request parameter to craft a VRFY command that is sent to the SMTP server. 
+An attacker may use this parameter to modify the command sent to the server and inject new commands using CRLF characters.

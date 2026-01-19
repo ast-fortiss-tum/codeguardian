@@ -1,0 +1,1 @@
+a check to ensure that the message's 'from' attribute matches the bound JID (Jabber ID) of the user's session: if msg['from'].bare == self.xmpp.boundjid.bare.

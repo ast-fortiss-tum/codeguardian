@@ -1,0 +1,4 @@
+In your code, element is obtained from getUntrustedInput() and then directly used within ReactDOM.render(). 
+If getUntrustedInput() can return a string that contains malicious JavaScript code, and if this string is
+not properly sanitized or escaped, an attacker could inject script content that gets executed in the context of your web page. 
+This can lead to various security issues such as stealing user cookies, session tokens, or performing actions on behalf of the users.

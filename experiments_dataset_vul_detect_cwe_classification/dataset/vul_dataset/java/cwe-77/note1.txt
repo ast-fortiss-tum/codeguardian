@@ -1,0 +1,4 @@
+The method checkConnection takes a UrlArgument object (repoUrl) as a parameter.
+This URL is directly used in constructing a command line argument (withArg(repoUrl)).
+If the UrlArgument object is not properly sanitized and can be influenced by an external user,
+it may be possible for an attacker to inject additional commands or alter the intended command.

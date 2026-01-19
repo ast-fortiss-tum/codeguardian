@@ -1,0 +1,2 @@
+Array Access and Bounds Checking: The code correctly checks that the parameters array has more than one element
+before deciding the value of origin. This is a good practice to avoid out-of-bounds access.

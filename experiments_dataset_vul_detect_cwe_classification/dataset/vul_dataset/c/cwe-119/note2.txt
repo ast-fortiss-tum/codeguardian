@@ -1,0 +1,4 @@
+The primary issue here is the use of strcpy() to copy the host name into a local buffer hostname without checking 
+if the size of the data from hp->h_name exceeds the size of hostname. 
+This can lead to a buffer overflow, where data exceeds the buffer's boundary and overwrites adjacent memory. 
+Buffer overflow vulnerabilities are serious as they can lead to arbitrary code execution, system crashes, or data corruption.

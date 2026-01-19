@@ -1,0 +1,4 @@
+The if(1) statement will always evaluate to true, so the code within that block will always run.
+
+In this snippet, x is a random number between 0 and 2, and the switch statement handles all possible values of x. 
+If x somehow ended up being a value other than 0, 1, or 2, the default case would be executed, and “Invalid Number” would be printed.

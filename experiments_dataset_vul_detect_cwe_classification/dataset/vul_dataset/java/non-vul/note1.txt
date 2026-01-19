@@ -1,0 +1,2 @@
+The current code is non-vulnerable in isolation, as it simply declares private variables 
+and a constructor without any specific logic.

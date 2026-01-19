@@ -1,0 +1,5 @@
+Hardcoded Condition:
+
+The condition if (5 == 5) will always be true, making the else block unreachable. 
+This seems to be a placeholder or an example rather than a security vulnerability, 
+but it's worth noting for code clarity and maintainability.

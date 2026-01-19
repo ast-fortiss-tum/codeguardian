@@ -1,0 +1,6 @@
+This weakness is present in the expression (iova + length). 
+If the sum of iova and length overflows, it can wrap around, 
+resulting in a smaller value than expected. 
+This could cause the comparison ((iova + length) > (mem->iova + mem->length)) to improperly evaluate to false, 
+leading to a situation where an out-of-bounds memory access is incorrectly considered valid. 
+This kind of issue is especially critical in kernel or low-level code, where incorrect memory access can lead to system crashes or exploitation for further attacks.

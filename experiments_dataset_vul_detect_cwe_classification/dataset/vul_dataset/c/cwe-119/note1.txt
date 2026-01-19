@@ -1,0 +1,4 @@
+These differences in encoding checks could affect how the function processes and unpacks array data, 
+particularly in the context of ABI-encoded elements. The second script is more restrictive in terms of 
+the encoding it acknowledges (only Encoding.ABI), which could impact its compatibility or behavior 
+in certain scenarios compared to the first script.

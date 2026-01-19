@@ -1,0 +1,5 @@
+It is never a good idea to assign an empty string to a password variable. 
+If the empty password is used to successfully authenticate against another system, 
+then the corresponding account's security is likely compromised because it accepts an empty password. 
+If the empty password is merely a placeholder until a legitimate value can be assigned to the variable, 
+then it can confuse anyone unfamiliar with the code and potentially cause problems on unexpected control flow paths.

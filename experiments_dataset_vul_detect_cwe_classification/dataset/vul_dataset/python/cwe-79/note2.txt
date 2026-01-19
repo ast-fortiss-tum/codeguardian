@@ -1,0 +1,4 @@
+Since the user-supplied data (eid) is directly written to the output (with self.writeln), 
+if this data includes malicious script content, it could be executed in the context of the user's browser. 
+This type of vulnerability is especially concerning in web applications, 
+as it can lead to various security issues such as stealing cookies, session tokens, or other sensitive information from users.

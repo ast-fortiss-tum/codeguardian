@@ -1,0 +1,4 @@
+There is no data in the datasets.
+
+In Python, the risk of encountering CWE-125 is significantly reduced due to its high-level, 
+managed nature, which includes automatic memory management and bounds checking.

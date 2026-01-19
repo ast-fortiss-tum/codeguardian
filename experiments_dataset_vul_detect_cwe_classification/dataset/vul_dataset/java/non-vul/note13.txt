@@ -1,0 +1,6 @@
+It’s using a SecureRandom object to generate a random integer, which is then used 
+in a switch statement to determine the value of a string. 
+The string is then written to an output stream.
+
+The use of SecureRandom is a good practice when generating random numbers, 
+as it provides a cryptographically strong random number generator (RNG).

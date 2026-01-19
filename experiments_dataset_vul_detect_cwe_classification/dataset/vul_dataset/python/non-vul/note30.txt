@@ -1,0 +1,23 @@
+
+Vul Code (Vulnerable to CWE-502)
+```
+if self._recent_pyyaml():
+    yamlconfig = yaml.load(open(configfile), Loader=yaml.FullLoader)
+else:
+    yamlconfig = yaml.load(open(configfile))
+```
+
+Fixed Code (Addressing CWE-502)
+```
+if self._recent_pyyaml():
+    yamlconfig = yaml.load(open(configfile), Loader=yaml.SafeLoader)
+else:
+    yamlconfig = yaml.safe_load(open(configfile))
+```
+
+Vul Code: Uses Loader=yaml.FullLoader with yaml.load(). FullLoader can load all YAML tags and hence can execute arbitrary Python objects if the YAML content is maliciously crafted.
+Fixed Code: Uses Loader=yaml.SafeLoader with yaml.load() for recent PyYAML versions. This loader safely loads the YAML content, preventing the execution of arbitrary Python objects.
+
+Loading Approach for Older PyYAML Versions:
+Vul Code: Directly uses yaml.load(open(configfile)) without specifying a loader. This defaults to a loader that can execute arbitrary Python objects, which is a security risk.
+Fixed Code: Uses yaml.safe_load(open(configfile)). The safe_load function is designed to safely parse YAML files, preventing the execution of arbitrary code.

@@ -1,0 +1,2 @@
+There is no accurate-enough snippet in the CVEfixes dataset for the CWE-269 
+due to that snippets are related to kernel-based projects.

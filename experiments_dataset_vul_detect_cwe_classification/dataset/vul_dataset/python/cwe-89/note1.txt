@@ -1,0 +1,6 @@
+The use of string interpolation with 
+
+"SELECT term FROM terms WHERE term > \"{floor}\" AND term < \"{ceiling}\" AND term LIKE \"{word}%%\" ORDER BY length(term),term LIMIT {requested_limit}" 
+
+and other similar lines directly incorporate user input (word, floor, ceiling, and requested_limit) into the SQL query. 
+If an attacker can control the input to manipulate these variables, they could potentially inject malicious SQL commands.

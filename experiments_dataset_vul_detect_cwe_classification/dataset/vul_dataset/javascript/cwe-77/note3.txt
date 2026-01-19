@@ -1,0 +1,5 @@
+// The code has CWE-78 vulnerability, which is has a parent of CWE-77.
+The backuptype parameter from the request URL is directly concatenated with a command string 
+("c:\\util\\rmanDB.bat" + btype) to form the cmd variable.
+This cmd variable is then executed by cp.exec. If an attacker can manipulate the backuptype query 
+parameter in the request URL, they might inject arbitrary commands which will be executed on the server.

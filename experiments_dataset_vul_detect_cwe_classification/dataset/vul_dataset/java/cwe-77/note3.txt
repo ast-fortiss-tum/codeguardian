@@ -1,0 +1,3 @@
+The user variable is obtained directly from request.getParameter("user"), which means it might contain user-supplied data.
+This user variable is then concatenated directly into an SMTP command: transport.simpleCommand("VRFY " + user);.
+If an attacker provides a specially crafted value for user, they might be able to inject additional SMTP commands or other unintended instructions.

@@ -1,0 +1,2 @@
+There is no snippet in the CVEfixes as well as cwe-snippets dataset for the CWE-276 
+due to that snippets are related to kernel-based projects.

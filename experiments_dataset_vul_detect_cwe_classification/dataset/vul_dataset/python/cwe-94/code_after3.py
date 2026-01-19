@@ -1,0 +1,20 @@
+# Source: Row 11 in ./dataset/CVEfixes/Analysis/results/Python/df_python_cwe_94.xlsx
+
+def constructObject(data):
+    try:
+        m = import_module("messagetypes." + data[""])
+        classBase = getattr(m, data[""].title())
+    except (NameError, ImportError):
+        logger.error("Don't know how to handle message type: \"%s\"", data[""], exc_info=True)
+        return None
+    try:
+        returnObj = classBase()
+        returnObj.decode(data)
+    except KeyError as e:
+        logger.error("Missing mandatory key %s", e)
+        return None
+    except:
+        logger.error("classBase fail", exc_info=True)
+        return None
+    else:
+        return returnObj

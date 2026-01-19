@@ -1,0 +1,3 @@
+The function implements a basic rate limiting and lockout mechanism based on the number of failed login attempts.
+This is a good security practice as it helps prevent brute force attacks. The use of time.sleep(2 ** val[0]) increases 
+the wait time exponentially with each failed attempt, which can be effective in slowing down automated attacks.

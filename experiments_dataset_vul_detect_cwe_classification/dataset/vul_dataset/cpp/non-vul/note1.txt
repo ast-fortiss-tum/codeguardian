@@ -1,0 +1,8 @@
+If data is less than CHAR_MAX, it increments data by 1 and assigns the result to result. 
+The function then prints result as a hexadecimal character. 
+If data is not less than CHAR_MAX, it prints a message indicating 
+that the data value is too large to perform arithmetic safely.
+
+This code is safe because it checks if data is less than 
+CHAR_MAX before performing the increment operation. This check prevents an overflow, 
+which could occur if data were equal to CHAR_MAX and then incremented. 

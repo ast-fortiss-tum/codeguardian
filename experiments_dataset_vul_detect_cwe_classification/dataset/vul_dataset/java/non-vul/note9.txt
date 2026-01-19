@@ -1,0 +1,3 @@
+The data parameter is passed from the func2 method, where it is hardcoded as "foo".
+This means an attacker cannot control the data parameter, and therefore, 
+cannot exploit the potential Command Injection vulnerability.

@@ -1,0 +1,7 @@
+The function func allocates memory for data, initializes it, 
+and then frees it within the first if block. 
+However, in the second if block, you attempt to access data again by passing 
+its first element to printLongLine. 
+At this point, data points to a memory location that has been freed. 
+This can lead to undefined behavior, potentially causing crashes, data corruption, 
+or even execution of malicious code by exploiting the freed memory space.

@@ -1,0 +1,2 @@
+Since data is 7, it falls within the valid range of indices for buffer (0 to 9), 
+so there’s no risk of a buffer overflow in this case.

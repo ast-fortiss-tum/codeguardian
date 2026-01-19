@@ -1,0 +1,4 @@
+The code does not adequately validate the input received from the scanf function. 
+While it checks for an EOF (End of File) to ensure some input is received, 
+it does not verify whether the input is within a reasonable range (apart from the MAX_DIM check) 
+or if it is of the correct format (other than being an integer). 

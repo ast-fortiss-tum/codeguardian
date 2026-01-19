@@ -1,0 +1,17 @@
+CWE-362 is the parent of CWE-367, which means that CWE-367 is a specific instance or subtype of CWE-362.
+
+CWE-362 represents the broader category of race conditions due to concurrent execution using shared resources with improper synchronization. 
+It's a general category that encompasses various types of race conditions, including those arising from multithreading issues, 
+shared resource access, and other scenarios where the timing of execution can lead to security vulnerabilities.
+
+CWE-367 (TOCTOU Race Condition) is a specific type of race condition where the vulnerability arises due to a gap in time between 
+checking the state of a resource (like file permissions) and using that resource (such as opening the file). This subtype falls 
+under the broader category of CWE-362.
+
+
+The access() function is used to check if the file can be written to.
+However, there's a window of time between the check (access()) and the use (fopen()). During this window,
+the state of the file or its permissions might change (e.g., it could be deleted, permissions could be altered,
+or it might be replaced by a symlink to a critical system file).
+If such a change occurs, your program might behave unexpectedly or insecurely when it operates on the file, 
+leading to security vulnerabilities.

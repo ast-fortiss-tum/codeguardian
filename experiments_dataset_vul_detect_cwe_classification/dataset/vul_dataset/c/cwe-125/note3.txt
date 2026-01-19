@@ -1,0 +1,7 @@
+// This snippet is vulnerable to a buffer over-read (CWE-126), which is a child of CWE-125.
+The function memchr is used to search for the first occurrence of the character 'x' in the first MAX_PATH bytes 
+of the string pointed to by argv[0].
+argv[0] typically contains the program's name, and its length may be less than MAX_PATH. 
+If 'x' does not occur in the first MAX_PATH bytes of argv[0], memchr might read beyond the end of the string, 
+leading to a buffer over-read. This can potentially expose sensitive memory content or cause a program crash 
+if it encounters a protected memory area.

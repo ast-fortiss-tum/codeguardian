@@ -1,0 +1,4 @@
+The variable rName is directly concatenated with a file path. 
+If rName comes from an untrusted source (like a user request), 
+it may contain directory traversal characters (like ../). 
+An attacker could manipulate rName to access or delete files outside of the intended directory.

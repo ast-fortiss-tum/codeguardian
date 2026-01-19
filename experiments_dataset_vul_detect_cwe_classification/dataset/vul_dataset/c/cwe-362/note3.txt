@@ -1,0 +1,7 @@
+The unlocking and relocking of the spin lock around the callback invocation 
+(ti->callback(ti, resolution, ticks)) is potentially risky. 
+
+This pattern is typically used to avoid holding a lock during a callback to prevent deadlocks. 
+Still, it introduces a window where other threads or interrupt handlers might modify 
+the shared resources (like timer and ti) concurrently, 
+leading to inconsistent states or race conditions.

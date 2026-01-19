@@ -1,0 +1,10 @@
+# Source: Row 180 in ./dataset/CVEfixes/Analysis/results/Python/df_python_all.xlsx
+
+def setUp(self):
+        shape = (2, 4, 3)
+        rand = np.random.random
+        self.x = rand(shape) + rand(shape).astype(np.complex)*1j
+        self.x[0,:, 1] = [nan, inf, -inf, nan]
+        self.dtype = self.x.dtype
+        self.file = tempfile.NamedTemporaryFile()
+        self.filename = self.file.name

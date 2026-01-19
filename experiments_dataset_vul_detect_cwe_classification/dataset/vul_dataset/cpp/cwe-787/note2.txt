@@ -1,0 +1,12 @@
+In your code, the memcpy function is used to copy data from the in buffer to the buf buffer. 
+The number of bytes to be copied is controlled by the user-input value bytes. 
+Since there's no check to ensure that bytes does not exceed the size of the buf array (which is 64 bytes), 
+a user could input a value that causes memcpy to write data beyond the bounds of buf. 
+This is a classic example of an out-of-bounds write, as the excess data would overflow into adjacent memory space, 
+potentially overwriting important data or control information.
+
+
+"""Note"""
+The snippets in the cwe-snippets (snippets_2/non-compliant/C++/0004.cpp, 0005.cpp, 0006.cpp, and 0007.cpp)
+are also stored/classfied as CWE-120. Thus, the snippets in the cwe-snippets are not included in this dataset 
+due to the confusion of CWE-120 and CWE-787...

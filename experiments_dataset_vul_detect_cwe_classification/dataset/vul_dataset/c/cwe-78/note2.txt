@@ -1,0 +1,5 @@
+The most critical issue here is the use of the data variable, which is directly used in POPEN. 
+This can potentially lead to command injection if data contains malicious input. 
+
+Since data is populated based on the content received over a network (via recv()), 
+it's possible for an attacker to control this input and execute arbitrary commands on the system where this function runs.

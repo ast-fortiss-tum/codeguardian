@@ -1,0 +1,3 @@
+The code snippet you've provided appears to be in Java. It retrieves the value of a system property named "SCRIPTNAME" and, 
+if it's not null, attempts to execute it using System.exec(script). This pattern raises a significant security concern 
+related to Command Injection, which corresponds to CWE-78 (Improper Neutralization of Special Elements used in an OS Command).

@@ -1,0 +1,24 @@
+Setting Pointer to NULL: Initially, data is set to NULL (or nullptr in modern C++). 
+This is fine on its own. However, the problem arises in the subsequent use of this pointer.
+
+Dereferencing a NULL Pointer: The statement printIntLine(data->intOne) attempts to dereference data 
+which is a NULL pointer. Dereferencing a NULL pointer leads to undefined behavior, 
+typically resulting in a runtime crash.
+
+Deleting a NULL Pointer: While deleting a NULL pointer is safe in C++ and does not lead to undefined behavior, 
+the intent behind deleting data seems incorrect since it was never allocated memory.
+
+
+To fix these issues, you should ensure that data is either properly initialized to a valid object of TwoIntsClass 
+before dereferencing or add checks to ensure that data is not NULL when attempting to access its members or delete it.
+
+E.g.,
+
+```
+TwoIntsClass * data = new TwoIntsClass();
+// ... use data ...
+if(data != nullptr) {
+    printIntLine(data->intOne);
+    delete data;
+}
+```

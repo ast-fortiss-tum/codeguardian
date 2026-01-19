@@ -1,0 +1,5 @@
+When you use JmsInvokerServiceExporter, it exposes a service interface for remote invocation over JMS, 
+which inherently involves deserialization of incoming messages. 
+If an attacker is able to send maliciously crafted messages to this service, 
+and the application deserializes these without adequate checks, 
+it could lead to various attacks, including remote code execution.

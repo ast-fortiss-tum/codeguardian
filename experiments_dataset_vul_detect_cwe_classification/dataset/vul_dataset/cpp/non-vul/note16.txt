@@ -1,0 +1,3 @@
+• The data pointer is initialized to NULL, which is a good practice to avoid dangling pointers.
+• In the first if statement, memory is allocated on the heap for data. The condition STATIC_CONST_TRUE is presumably always true, so this allocation always happens.
+• In the second if statement, the memory allocated for data is deleted. Again, the condition STATIC_CONST_TRUE is presumably always true, so this deletion always happens.

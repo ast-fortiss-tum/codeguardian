@@ -1,0 +1,5 @@
+/* FIX: Do not make any attempt to clear the list */
+for( i = data.begin(); i != data.end(); i++)
+    {
+        cout << " " << *i;
+    }

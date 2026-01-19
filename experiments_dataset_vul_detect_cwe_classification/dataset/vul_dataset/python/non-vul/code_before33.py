@@ -1,0 +1,11 @@
+# Source: Row 58 in ./dataset/CVEfixes/Analysis/results/Python/df_python_all.xlsx
+
+def list_tokens(self, user_id):
+    """Returns a list of current token_id's for a user
+
+    :param user_id: identity of the user
+    :type user_id: string
+    :returns: list of token_id's
+
+    """
+    raise exception.NotImplemented()

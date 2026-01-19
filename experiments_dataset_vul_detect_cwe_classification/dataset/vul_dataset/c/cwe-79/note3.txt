@@ -1,0 +1,6 @@
+The function directly inserts the contents of text into the HTML without any sanitization or escaping. 
+If text contains HTML or JavaScript code, it will be rendered as-is by the browser. 
+This behavior can lead to Cross-Site Scripting (XSS) vulnerabilities, where an attacker can inject malicious scripts 
+into web pages viewed by other users. 
+To mitigate this issue, any content that will be inserted into HTML should be properly escaped 
+to neutralize any potentially harmful characters or scripts. 

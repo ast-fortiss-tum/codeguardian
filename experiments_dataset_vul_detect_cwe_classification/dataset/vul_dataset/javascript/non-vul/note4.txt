@@ -1,0 +1,2 @@
+The function is not vulnerable in the traditional sense of introducing 
+common web application vulnerabilities. 

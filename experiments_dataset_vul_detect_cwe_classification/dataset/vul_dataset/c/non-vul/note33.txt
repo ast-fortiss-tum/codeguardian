@@ -1,0 +1,1 @@
+It safely multiplies a small positive number by 2 and checks to ensure that the number is positive before doing so. 

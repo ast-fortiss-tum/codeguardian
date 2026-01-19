@@ -1,0 +1,4 @@
+The function import_bookmarks allows a user to select a file to import bookmarks from.
+The chosen file is opened and its contents are directly deserialized using json.load(fileobj).
+There is no check to ensure that the deserialized data is safe or has the expected structure, 
+other than a very basic check for the presence of a 'title' key in each bookmark.

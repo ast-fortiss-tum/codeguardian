@@ -1,0 +1,7 @@
+The use of `sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER)` raises a significant security concern, 
+commonly associated with CWE-295: Improper Certificate Validation, which is a child of CWE-287: Improper Authentication.
+
+This specific line disables hostname verification by using ALLOW_ALL_HOSTNAME_VERIFIER. 
+Hostname verification is a crucial part of the SSL/TLS protocol that ensures you are connecting to the correct server. 
+By disabling it, your application becomes vulnerable to man-in-the-middle attacks. 
+An attacker could present a certificate for a different hostname, and your application would accept it as valid.

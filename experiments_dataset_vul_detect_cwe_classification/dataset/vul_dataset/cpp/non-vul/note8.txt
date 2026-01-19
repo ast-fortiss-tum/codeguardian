@@ -1,0 +1,6 @@
+/* FIX: catch the out_of_range error */
+catch (out_of_range &)
+            {
+                printLine("Range specified was invalid");
+                exit(1);
+            }

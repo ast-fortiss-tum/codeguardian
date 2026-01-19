@@ -1,0 +1,3 @@
+/* FIX: acquire a lock before conducting operations that need to occur
+     * atomically, and release afterwards
+*/

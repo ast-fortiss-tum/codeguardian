@@ -1,0 +1,9 @@
+1. Key Generation: The code generates a new AES key of 128 bits. This is generally secure, provided the KeyGenerator 
+is properly implemented and uses a strong source of randomness. AES-128 is considered secure for most purposes.
+
+2. Cipher Initialization and Mode: It uses AES in CBC mode with PKCS5Padding. CBC mode requires an initialization vector (IV) 
+to start the encryption process. The use of CBC mode is secure provided that the IV is used correctly.
+
+3. Initialization Vector (IV): The code generates a random IV for each encryption operation, which is the recommended practice for using CBC mode. 
+The IV is generated using a SecureRandom instance, which is a good approach to ensure that the IV is unpredictable. 
+Using a secure and unpredictable IV prevents certain types of cryptographic attacks, such as IV reuse attacks.

@@ -1,0 +1,1 @@
+It constructs a file path based on user input (path) without sufficient sanitization. This could allow an attacker to access files outside the intended directory by using path traversal characters like ../.

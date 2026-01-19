@@ -1,0 +1,6 @@
+The URL object is created directly from a user-supplied input (urls[i]), 
+which is only minimally checked by Utils.sanitizeUrl(urls[i]). 
+However, this sanitation is not detailed and might not be robust enough to prevent malicious URLs. 
+An attacker could exploit this by supplying a URL that leads to a location within the server's internal network, 
+or to other external systems that the server can access, potentially gaining access 
+to sensitive information or disrupting internal processes.

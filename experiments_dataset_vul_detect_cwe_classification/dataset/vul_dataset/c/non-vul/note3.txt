@@ -1,0 +1,1 @@
+The snippet is the fixed-version of the sample in CWE-390: Detection of Error Condition Without Action.

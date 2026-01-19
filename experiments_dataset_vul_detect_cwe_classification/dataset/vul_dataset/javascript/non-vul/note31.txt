@@ -1,0 +1,7 @@
+1. Use of Safe YAML Parsing: The function uses YAML.safeLoad for parsing the YAML content, 
+which is a good practice. YAML.safeLoad is designed to safely parse a YAML string, 
+minimizing risks like arbitrary code execution which can occur with YAML.load if the YAML file 
+contains malicious content. The option to use YAML.load is provided but is gated behind 
+the yamlOptions.unsafeLoad condition, suggesting an awareness of the associated risks.
+
+2. Exception Handling: The function properly handles exceptions during the YAML parsing process. 

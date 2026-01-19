@@ -1,0 +1,187 @@
+{
+  "name": "code-guardian",
+  "displayName": "Code-Guardian: Scan your code for vulnerabilities",
+  "description": "Code-Guardian is a Visual Studio Code extension that uses the OpenAI's GPT-4-based models to scan your code for vulnerabilities and suggest fixes.",
+  "version": "0.9.0",
+  "publisher": "anonymous",
+  "icon": "resources/extensionIcon.png",
+  "license": "MIT",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "openai",
+    "gpt3",
+    "gpt4",
+    "copilot",
+    "ai",
+    "cweScan"
+  ],
+  "activationEvents": [
+    "onView:chatgpt.chatView",
+    "onCommand:chatgpt.cweScan",
+    "onCommand:resetConversation"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "chatgpt.cweScan",
+        "title": "Code-Guardian: CWE scan"
+      },
+      {
+        "command": "chatgpt.resetConversation",
+        "title": "Reset ChatGPT conversation"
+      },
+      {
+        "command": "chatgpt.tryAgain",
+        "title": "Retry ChatGPT request"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "chatgpt.cweScan",
+          "when": "editorHasSelection",
+          "group": "chatgpt-menu-group@8"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "chatgpt.resetConversation"
+        },
+        {
+          "command": "chatgpt.cweScan"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chatgpt",
+          "title": "Code-Guardian",
+          "icon": "resources/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "chatgpt": [
+        {
+          "type": "webview",
+          "id": "chatgpt.chatView",
+          "name": "Code-Guardian"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Code_Guardian",
+      "type": "object",
+      "properties": {
+        "code_guardian.apiKey": {
+          "markdownDescription": "OpenAI API key from [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)",
+          "type": "string",
+          "order": 0
+        },
+        "code_guardian.apiUrl": {
+          "markdownDescription": "OpenAI API URL or other custom API URL. Defaults to [https://api.openai.com/v1](https://api.openai.com/v1)",
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "order": 1
+        },
+        "code_guardian.model": {
+          "type": "string",
+          "enum": [
+            "gpt-3.5-turbo",
+            "gpt-4",
+            "gpt-4-turbo"
+          ],
+          "default": "gpt-4-turbo",
+          "description": "Which GPT model to use",
+          "order": 1
+        },
+        "code_guardian.deploymentId": {
+          "type": "string",
+          "description": "OpenAI deployment ID",
+          "order": 1
+        },
+        "code_guardian.pasteOnClick": {
+          "type": "boolean",
+          "default": true,
+          "description": "Paste the code from a codeblock inside the response into the editor when you click on it",
+          "order": 2
+        },
+        "code_guardian.promptPrefix.cweScan": {
+          "type": "string",
+          "default": "",
+          "description": "",
+          "order": 13
+        },
+        "code_guardian.keepConversation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Keep the conversation going by using the same conversation ID for all requests (allows follow-up questions)",
+          "order": 8
+        },
+        "code_guardian.timeoutLength": {
+          "type": "number",
+          "default": "120",
+          "description": "How long should the request wait for a response before timing out (in seconds)",
+          "order": 9
+        },
+        "code_guardian.selectedInsideCodeblock": {
+          "type": "boolean",
+          "default": true,
+          "description": "Append selected code as a codeblock (```...code...```) instead of plain text",
+          "order": 10
+        },
+        "code_guardian.codeblockWithLanguageId": {
+          "type": "boolean",
+          "default": true,
+          "description": "Append language id of the selected code to the codeblock (```language...code...```)",
+          "order": 11
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "update-package-lock": "npm install --package-lock-only"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.11",
+    "chatgpt": "^5.2.2",
+    "gpt3-tokenizer": "^1.1.5",
+    "node-fetch": "^3.3.0"
+  }
+}

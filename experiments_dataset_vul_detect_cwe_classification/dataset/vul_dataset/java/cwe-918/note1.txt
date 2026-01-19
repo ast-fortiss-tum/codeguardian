@@ -1,0 +1,11 @@
+However, it's important to note that solving CWE-918 or mitigating SSRF vulnerabilities often requires a combination of checks and balances:
+
+Validating URLs: Ensure that only valid, expected URLs are processed. This involves checking protocols, domains, and also potentially dangerous IP ranges (like private, link-local, or loopback addresses).
+
+Limiting Resource Access: Restrict the resources that the server can access. For instance, disallowing the server from accessing certain internal or sensitive resources.
+
+Using Allowlists: Implementing allowlists for URLs, where only predefined and trusted URLs are allowed.
+
+Response Handling: Carefully handle responses from external requests to ensure no sensitive information is leaked.
+
+The change you've observed in the script is a part of this broader strategy to mitigate SSRF risks. It's a positive improvement, but on its own, it might not be sufficient to fully solve CWE-918, as other aspects of the vulnerability may still need to be addressed.

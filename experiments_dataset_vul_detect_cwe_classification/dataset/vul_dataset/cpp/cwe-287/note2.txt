@@ -1,0 +1,8 @@
+// This script is classified as CWE-295, which is a child of CWE-287.
+In the context of SSL/TLS security has a specific vulnerability.
+By setting SSL_VERIFY_NONE, this line of code configures the SSL context 
+to not perform any verification of the server certificate. 
+
+This means that it will not check if the certificate is signed by a trusted certificate authority, 
+or if it is valid for the host it is presented by. 
+This can leave the connection vulnerable to man-in-the-middle attacks.
